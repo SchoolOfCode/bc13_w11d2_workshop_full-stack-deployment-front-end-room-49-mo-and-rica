@@ -3,7 +3,7 @@
 import React from "react";
 import "./listItem.css";
 
-function ListItem({ name, completed, tickItem, handleDelete }) {
+function ListItem({ name, completed, tickItem, handleDelete, key }) {
   return (
     <>
       <li
@@ -13,7 +13,7 @@ function ListItem({ name, completed, tickItem, handleDelete }) {
       >
         {name}
       </li>
-      <button onClick={handleDelete}> Delete Item!</button>
+      <button onClick={() => handleDelete(key)}> Delete Item!</button>
     </>
   );
 }

@@ -57,9 +57,9 @@ function App() {
     setList(data.payload);
   }
 
-  function handleDelete(id) {
-    deleteListItem(id);
-  }
+  // function handleDelete(id) {
+  //   deleteListItem(id);
+  // }
 
   function clearList() {
     //This function clears all the items that have been added to the list.
@@ -80,11 +80,7 @@ function App() {
   return (
     <section>
       <InputList addToList={addToList} buttonText={"Add To List"} />
-      <ShowList
-        list={list}
-        tickItem={tickItem}
-        handleDelete={(id) => handleDelete(id)}
-      />
+      <ShowList list={list} tickItem={tickItem} handleDelete={deleteListItem} />
       <ClearList clearList={clearList} buttonText={"Clear List"} />
     </section>
   );
