@@ -13,7 +13,7 @@ function ListItem({ name, completed, tickItem, handleDelete, key }) {
       >
         {name}
       </li>
-      <button onClick={() => handleDelete(key)}> Delete Item!</button>
+      <button onClick={() => handleDelete(7)}> Delete Item!</button>
     </>
   );
 }
