@@ -54,6 +54,7 @@ function App() {
     });
     const response = await fetch(`${url}/items`);
     const data = await response.json();
+    console.log("button is being clicked", data.payload);
     setList(data.payload);
   }
 
