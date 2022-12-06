@@ -12,7 +12,7 @@ function ShowList({ list, tickItem, handleDelete }) {
           completed={listItem.completed}
           key={listItem.id}
           tickItem={() => tickItem(listItem.id)}
-          handleDelete={handleDelete}
+          onClick={handleDelete}
         />
       ))}
     </ol>
