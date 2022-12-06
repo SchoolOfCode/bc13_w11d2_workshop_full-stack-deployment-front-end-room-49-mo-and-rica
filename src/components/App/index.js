@@ -48,6 +48,19 @@ function App() {
     setList((previous) => [...previous, listItemWithId]);
   }
 
+  async function deleteListItem(id) {
+    await fetch(`${url}/items/${id}`, {
+      method: "DELETE",
+    });
+    const response = await fetch(`${url}/items`);
+    const data = await response.json();
+    setList(data.payload);
+  }
+
+  function handleDelete(id) {
+    deleteListItem(id);
+  }
+
   function clearList() {
     //This function clears all the items that have been added to the list.
     const clearedList = [];
@@ -67,7 +80,11 @@ function App() {
   return (
     <section>
       <InputList addToList={addToList} buttonText={"Add To List"} />
-      <ShowList list={list} tickItem={tickItem} />
+      <ShowList
+        list={list}
+        tickItem={tickItem}
+        handleDelete={(id) => handleDelete(id)}
+      />
       <ClearList clearList={clearList} buttonText={"Clear List"} />
     </section>
   );

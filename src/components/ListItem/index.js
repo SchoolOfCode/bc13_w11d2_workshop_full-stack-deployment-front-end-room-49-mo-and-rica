@@ -3,15 +3,18 @@
 import React from "react";
 import "./listItem.css";
 
-function ListItem({ name, completed, tickItem }) {
+function ListItem({ name, completed, tickItem, handleDelete }) {
   return (
-    <li
-      data-testid="list-item"
-      className={completed ? "tickedItem" : "untickedItem"}
-      onClick={tickItem}
-    >
-      {name}
-    </li>
+    <>
+      <li
+        data-testid="list-item"
+        className={completed ? "tickedItem" : "untickedItem"}
+        onClick={tickItem}
+      >
+        {name}
+      </li>
+      <button onClick={handleDelete}> Delete Item!</button>
+    </>
   );
 }
 
